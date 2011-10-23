@@ -123,13 +123,13 @@ class DigestAuthMixin(object):
             else:
                 expected_response = self.response(creds['auth_password'])
                 actual_response = self.params['response']
-                print "Expected: %s" % expected_response
-                print "Actual: %s" % actual_response
+                #print "Expected: %s" % expected_response
+                #print "Actual: %s" % actual_response
 
             if expected_response and actual_response:
                 if expected_response == actual_response:
                     self._current_user = self.params['username']
-                    print "Digest Auth user '%s' successful for realm '%s'. URI: '%s', IP: '%s'" % (self.params['username'], self.realm, self.request.uri, self.request.remote_ip)
+                    #print "Digest Auth user '%s' successful for realm '%s'. URI: '%s', IP: '%s'" % (self.params['username'], self.realm, self.request.uri, self.request.remote_ip)
                     return True
                 else:
                     self.createAuthHeader()
